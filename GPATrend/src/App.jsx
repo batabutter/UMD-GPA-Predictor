@@ -4,8 +4,9 @@ import './App.css'
 function App() {
   const [data, setData] = useState([{}])
 
+  // Start by fetching basic user data information
   useEffect(() => {
-  fetch("/coursedata")
+  fetch("/course_info")
     .then(res => res.json())
     .then(data => {
       setData(data)
@@ -18,13 +19,6 @@ function App() {
   return (
     <>
     <div>
-      {(typeof data.sections === 'undefined') ? (
-        <p>Loading...</p>
-      ) : (
-        data.sections.map((section, i) => (
-          <p key={i}>{section}</p>
-        ))
-      )}
     </div>
   </>
   )

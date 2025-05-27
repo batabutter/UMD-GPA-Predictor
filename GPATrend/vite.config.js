@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/coursedata': 'http://localhost:5000',
+      '/course_info': 'http://localhost:5000',
     }
   }
 })
