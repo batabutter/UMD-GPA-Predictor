@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import { Chart as ChartJS } from "chart.js/auto";
+import { Bar } from "react-chartjs-2"
+import './styles.css'
 import './App.css'
 
 function App() {
@@ -18,7 +21,22 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className = "App">  
+      
+      <div className = "dataCard">
+        <Bar
+          data = {{
+            labels: ['A', 'B', 'C'],
+            datasets: [
+              {
+                label: "Revenue",
+                data: [200, 400 ,600]
+              },
+            ],
+          }}>
+        </Bar>
+      </div>
+
     </div>
   </>
   )
