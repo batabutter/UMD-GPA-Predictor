@@ -39,32 +39,58 @@ function App() {
   }, []);
 
   return (
-    <>
-    <div className = "App">  
-      <div className="title">
+  <>
+    <div className="App">
+      <div className="courseInfo">
         CMSC 216
-        <p className="subText">Average GPA: {Math.round(data.average_gpa * 100) / 100}
-          </p>
-        <p className="subText" >Title: <i>{data.title}</i> </p>
-      </div>
-      <div className = "dataCard">
-        <div>Grade Distribution by Section</div>
-        <Bar
-          data = {{
-            labels: gradeData.map( item => item.grade),
-            datasets: [
-              {
-                label: "Number of Students",
-                data: gradeData.map ( item => item.count)
-              },
-            ],
-          }}>
-        </Bar>
+        <p className="subText">
+          Average GPA: {Math.round(data.average_gpa * 100) / 100}
+        </p>
+        <p className="subText">
+          Title: <i>{data.title}</i>
+        </p>
       </div>
 
+      <div className="charts">
+        <div className="chartsRow">
+          <div className="dataCard">
+            <div>Grade Distribution All-Time</div>
+            <Bar
+              data={{
+                labels: ['A', 'B', 'C'],
+                datasets: [
+                  {
+                    label: 'Number of Students',
+                    data: ['200', '400', '800'],
+                  },
+                ],
+              }}
+            />
+          </div>
+
+          <div className="dataCard">
+            <div>GPA Trend All-Time</div>
+            <Bar
+              data={{
+                labels: ['A', 'B', 'C'],
+                datasets: [
+                  {
+                    label: 'Number of Students',
+                    data: ['200', '400', '800'],
+                  },
+                ],
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="sectionDist">
+          <SectionDistribution gradeData={gradeData} />
+        </div>
+      </div>
     </div>
   </>
-  )
+)
 }
 
 export default App
