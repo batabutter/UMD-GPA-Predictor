@@ -20,7 +20,8 @@ class Api_Calls:
     @staticmethod
     def Get_Course_Grade_Distribution(name):
         url = f'{base_url}/grades'
-        params = {"course": name}
+        params = {"course": name, "professor": "Alan Sussman",
+                  "semester": "201201", "section": "0101"}
         response = requests.get(url, params=params)
         
         if response.status_code == 200:
