@@ -4,6 +4,7 @@ import { Bar } from "react-chartjs-2"
 import './styles.css'
 import './App.css'
 import {SectionDistribution} from "./SectionDist"
+import { TotalDistribution } from './TotalDistribution';
 
 function App() {
   const [data, setData] = useState([{}])
@@ -81,21 +82,8 @@ function App() {
 
       <div className="charts">
         <div className="chartsRow">
-          <div className="dataCard">
-            <div>Grade Distribution All-Time</div>
-            <Bar
-              data={{
-                labels: totalGradeData.map(item => item.grade),
-                datasets: [
-                  {
-                    label: 'Number of Students',
-                    data: totalGradeData.map(item => item.count),
-                  },
-                ],
-              }}
-            />
-          </div>
-
+            <TotalDistribution gradeData={totalGradeData} />
+          
           <div className="dataCard">
             <div>GPA Trend All-Time</div>
             <Bar
@@ -111,7 +99,6 @@ function App() {
             />
           </div>
         </div>
-
         <div className="sectionDist">
           <SectionDistribution gradeData={gradeData} />
         </div>
