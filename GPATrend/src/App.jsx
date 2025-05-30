@@ -8,6 +8,7 @@ import {SectionDistribution} from "./SectionDist"
 function App() {
   const [data, setData] = useState([{}])
   const [gradeData, setGradeData] = useState([{}])
+  const [totalGradeData, setTotalGradeData] = useState([{}])
 
   // Start by fetching basic user data information
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
 
 }, []);
 
+  // Used a placeholder for a random section
   useEffect(() => {
   fetch("/course_grade_dis")
     .then(res => res.json())
@@ -37,6 +39,32 @@ function App() {
       console.log(gradeArray);
     });
   }, []);
+
+  useEffect(() => {
+  fetch("/course_grade_dis")
+    .then(res => res.json())
+    .then(data => {
+      const cumulativeGrades = {};
+
+      data.forEach(item => {
+        Object.keys(item).forEach(key => {
+        if (!["Other", "course", "professor", "section", "semester"].includes(key)) {
+          if (!cumulativeGrades[key]) 
+            cumulativeGrades[key] = 0;
+          cumulativeGrades[key] += item[key]
+        }
+        })
+      });
+      
+
+      const gradeArr = Object.entries(cumulativeGrades).map(([grade, count]) => ({
+        grade,
+        count
+      }));
+
+      setTotalGradeData(gradeArr);
+    });
+}, []);
 
   return (
   <>
@@ -57,11 +85,11 @@ function App() {
             <div>Grade Distribution All-Time</div>
             <Bar
               data={{
-                labels: ['A', 'B', 'C'],
+                labels: totalGradeData.map(item => item.grade),
                 datasets: [
                   {
                     label: 'Number of Students',
-                    data: ['200', '400', '800'],
+                    data: totalGradeData.map(item => item.count),
                   },
                 ],
               }}

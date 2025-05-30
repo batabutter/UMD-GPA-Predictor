@@ -15,7 +15,7 @@
   border-radius: .5em;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 1em;
-  width: 700px;
+  width: 500px;
 }
 
 .courseInfo {
@@ -31,7 +31,6 @@
 }
 
 .charts {
-  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction:column;
