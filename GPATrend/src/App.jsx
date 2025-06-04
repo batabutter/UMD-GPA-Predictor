@@ -5,6 +5,7 @@ import './styles.css'
 import './App.css'
 import {SectionDistribution} from "./SectionDist"
 import { TotalDistribution } from './TotalDistribution';
+import { GPATrend } from './GPATrend';
 
 function App() {
   const [data, setData] = useState([{}])
@@ -21,12 +22,11 @@ function App() {
 
 }, []);
 
-  // Used a placeholder for a random section
   useEffect(() => {
   fetch("/course_grade_dis")
     .then(res => res.json())
     .then(data => {
-      const raw = data[0]; // since it's an array with one object
+      const raw = data[0];
       const gradeKeys = Object.keys(raw).filter(
         key => !["course", "professor", "section", "semester"].includes(key)
       );
@@ -56,8 +56,7 @@ function App() {
         }
         })
       });
-      
-
+    
       const gradeArr = Object.entries(cumulativeGrades).map(([grade, count]) => ({
         grade,
         count
@@ -83,21 +82,7 @@ function App() {
       <div className="charts">
         <div className="chartsRow">
             <TotalDistribution gradeData={totalGradeData} />
-          
-          <div className="dataCard">
-            <div>GPA Trend All-Time</div>
-            <Bar
-              data={{
-                labels: ['A', 'B', 'C'],
-                datasets: [
-                  {
-                    label: 'Number of Students',
-                    data: ['200', '400', '800'],
-                  },
-                ],
-              }}
-            />
-          </div>
+            <GPATrend/>
         </div>
         <div className="sectionDist">
           <SectionDistribution gradeData={gradeData} />
