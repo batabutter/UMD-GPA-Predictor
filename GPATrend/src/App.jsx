@@ -82,7 +82,7 @@ function App() {
       <div className="charts">
         <div className="chartsRow">
             <TotalDistribution gradeData={totalGradeData} />
-            <GPATrend/>
+            <GPATrend gradeData={totalGradeData}/>
         </div>
         <div className="sectionDist">
           <SectionDistribution gradeData={gradeData} />
