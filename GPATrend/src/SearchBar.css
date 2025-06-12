@@ -1,0 +1,19 @@
+.input-wrapper {
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+input {
+    border-color: transparent;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    margin-left: 5px;
+    outline: none;
+}
+
+#search-icon{
+    color: red;
+}

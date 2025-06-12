@@ -19,6 +19,21 @@
   width: 500px;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+.searchBarContainer {
+  border-radius: 0.5em;
+  padding: 25px 25px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
 .courseInfo {
   font-size: larger;
   background-color: #efefef;

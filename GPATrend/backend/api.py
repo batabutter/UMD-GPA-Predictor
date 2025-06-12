@@ -30,6 +30,22 @@ class Api_Calls:
             
         data = response.json()
         return data
+    
+    @staticmethod
+    def Search_List_Result(name):
+
+        url = f'{base_url}/search'
+        params = {"query": name}
+        response = requests.get(url, params=params)
+            
+        if response.status_code == 200:
+            print('Course data aquired successfully')
+        else:
+            print(f'Error obtaining grade dis: {name}. Error code {response}')
+                
+        data = response.json()
+        return data
+        
         
         
     
