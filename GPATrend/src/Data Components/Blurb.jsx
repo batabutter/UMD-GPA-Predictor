@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import '.././App.css'
 
 export function Blurb( {courseName} ) {
 
@@ -17,12 +18,12 @@ export function Blurb( {courseName} ) {
         <>
             <div className="courseInfo">
                 {courseName}
-                <p className="subText">
+                <div className="subText">
                     Average GPA: {Math.round(data.average_gpa * 100) / 100}
-                </p>
-                <p className="subText">
+                </div>
+                <div className="subText">
                     Title: <i>{data.title}</i>
-                </p>
+                </div>
             </div>
         </>
     )

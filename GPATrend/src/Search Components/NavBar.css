@@ -1,0 +1,19 @@
+.navigation {
+  display: flex;
+  gap: 2vw;
+  justify-content: end;
+  background-color: #d6d6d6; 
+}
+
+.redir-button {
+  font-family: 'Quicksand', sans-serif;
+  padding: 5px 5px 5px 5px;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0.5em;
+  font-size: large;
+}
+
+.redir-button:hover{
+    background-color: aliceblue;
+}

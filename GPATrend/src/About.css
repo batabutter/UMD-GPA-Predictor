@@ -1,0 +1,26 @@
+* {
+   font-family: 'Quicksand', sans-serif;
+}
+
+.About {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 0.5em;
+}
+
+.info {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: .5em;
+    width: 700px;
+    font-size: 50px;
+    padding: 20px 20px 20px 20px;
+}
+
+.info .subText {
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+}
