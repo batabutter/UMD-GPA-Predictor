@@ -10,12 +10,12 @@ export function About() {
                 <b>About Page:</b>
                 <div className='subText'>This application was made to have a 
                     more streamlined and user-friendly way of viewing the 
-                    grade information for courses at The University of Maryland.
+                    grade information for courses at The University of Maryland
                 </div>
                 <div className='subText'>
-                    Grade data obtained via the <a href="https://planetterp.com/api/">PlanetTerpAPI.</a>
+                    Grade data obtained via the <a href="https://planetterp.com/api/">PlanetTerpAPI</a>
                 </div>
-                <div className='subText'>Concept inspired by <a href="https://vagrades.com/">VAGrades.</a></div>
+                <div className='subText'>Concept inspired by <a href="https://vagrades.com/">VAGrades</a></div>
                 <div className='subText'>The code to this webpage can 
                     be found <a href="https://github.com/batabutter/UMD-GPA-Predictor/tree/main">here</a></div>
                 <div className='subText'>If you have any suggestions, 

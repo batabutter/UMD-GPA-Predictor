@@ -3,6 +3,7 @@
 }
 
 .About {
+    background-color: #ddd;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -13,6 +14,7 @@
 }
 
 .info {
+    background-color: #efefef;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: .5em;
     width: 700px;
