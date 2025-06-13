@@ -18,6 +18,10 @@ def coursedis(course_name):
 def coursesearch(course_name):
     return Api_Calls.Search_List_Result(course_name)
 
+@app.route("/course_gpa_trend/<course_name>")
+def course_averages(course_name):
+    return Api_Calls.Course_GPA_Trend(course_name)
+
 if __name__ == "__main__":
     app.run(debug=True)
     

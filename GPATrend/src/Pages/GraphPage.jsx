@@ -3,7 +3,7 @@ import '.././styles.css'
 import '.././App.css'
 import { SectionDistribution } from ".././Data Components/SectionDist"
 import { TotalDistribution } from '.././Data Components/TotalDistribution';
-import { GPATrend, compute_semester_average } from '.././Data Components/GPATrend';
+import { GPATrend} from '.././Data Components/GPATrend';
 import { SearchBar } from '.././Search Components/Searchbar';
 import { SearchResultsList } from '.././Search Components/SearchResultsList';
 import { Blurb } from '.././Data Components/Blurb';

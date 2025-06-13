@@ -4,7 +4,10 @@ import { About } from "./Pages/About"
 
 /*
 TODO:
-- Make webpage run a lot faster
+- Make webpage run a lot faster:
+    - Put average GPA Calculation in backend
+    - Put total Distribution in backend
+    - Put section distribution in backend
 - Fix null errors when trying to render parts of a json that don't exist
 - Change colors of graphs to make them more visually appealing
 - Fix rendering bugs when navigating through webpages
