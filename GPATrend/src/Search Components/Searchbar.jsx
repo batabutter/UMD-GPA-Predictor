@@ -3,9 +3,7 @@ import React, {useState} from "react";
 import "./SearchBar.css"
 import {FaSearch} from "react-icons/fa"
 
-export function SearchBar ( {setResults} ) {
-
-    const [input, setInput] = useState("")
+export function SearchBar ( {setResults, userInput, setUserInput} ) {
 
     const fetchResults = (courseName) => {
         fetch(`/course_search/${courseName}`)
@@ -17,10 +15,12 @@ export function SearchBar ( {setResults} ) {
     }
 
     const handleInput = (input) => {
-        setInput(input)
+        setUserInput(input)
 
         if (input.length > 0) {
             fetchResults(input)
+        } else {
+            setResults([])
         }
     }
 
@@ -29,7 +29,7 @@ export function SearchBar ( {setResults} ) {
         <div className="input-wrapper">
             <FaSearch id="search-icon"/>
             <input placeholder="Type to search..." 
-            value = {input} 
+            value = {userInput} 
             onChange = {(e) => {handleInput(e.target.value)}}/>
         </div>
         </>

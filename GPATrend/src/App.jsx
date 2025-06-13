@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Chart as ChartJS } from "chart.js/auto";
-import { Bar } from "react-chartjs-2"
 import './styles.css'
 import './App.css'
 import { SectionDistribution } from "./Data Components/SectionDist"
@@ -12,13 +10,17 @@ import { Blurb } from './Data Components/Blurb';
 
 /*
 TODO:
-- Make search change data when shown
-- Change componenets so that the useEffects are in each subsequent component
+- Make webpage run a lot faster
+- Fix null errors when trying to render parts of a json that don't exist
+- Add about section
+- Change colors of graphs to make them more visually appealing
 */
 
 function App() {
   const [searchResults, setSearchResults] = useState([])
+  // Default course
   const [currCourse, setCurrCourse] = useState("CMSC216")
+  const [input, setInput] = useState("")
 
   return (
     <>
@@ -26,10 +28,15 @@ function App() {
         <div className="header">
           <Blurb courseName = {currCourse}/>
           <div className="searchBarContainer">
-            <SearchBar setResults = {setSearchResults}/>
+            <SearchBar 
+            setResults = {setSearchResults}
+            userInput={input}
+            setUserInput={setInput}/>
             <SearchResultsList 
             results={searchResults} 
-            setCourse={setCurrCourse}/>
+            setCourse={setCurrCourse}
+            setUserInput={setInput}
+            setResults={setSearchResults}/>
           </div>
 
         </div>

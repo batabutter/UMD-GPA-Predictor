@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchResultsList.css"
 import { SearchResult } from "./SearchResult";
 
-export function SearchResultsList( {results, setCourse} ) {
+export function SearchResultsList( {results, setCourse, setUserInput, setResults} ) {
     return (
         <>
         <div className = "results-list">
@@ -11,7 +11,10 @@ export function SearchResultsList( {results, setCourse} ) {
                     return <SearchResult 
                     result={result} 
                     key={id} 
-                    setCourse={setCourse}/>
+                    setCourse={setCourse}
+                    setUserInput={setUserInput}
+                    setResults={setResults}
+                    />
                 })
             }
         </div>
