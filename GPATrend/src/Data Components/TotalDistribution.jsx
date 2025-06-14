@@ -20,7 +20,9 @@ export function TotalDistribution({ courseName }) {
     return (
         <>
             <div className="dataCard">
+
                 <div>Grade Distribution All-Time</div>
+
                 {totalGradeData.length > 0 && totalGradeData[0].count > 0 && (
                     <Bar
                     data={{
@@ -34,6 +36,7 @@ export function TotalDistribution({ courseName }) {
                         ],
                     }}
                 />)}
+                
             </div>
         </>
     )

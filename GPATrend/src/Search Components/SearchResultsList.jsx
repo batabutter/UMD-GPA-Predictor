@@ -8,15 +8,18 @@ export function SearchResultsList( {results, setCourse, setUserInput, setResults
         <div className = "results-list">
             {
                 results.map( (result, id) => {
-                    return <SearchResult 
-                    result={result} 
-                    key={id} 
-                    setCourse={setCourse}
-                    setUserInput={setUserInput}
-                    setResults={setResults}
-                    />
+                    return (
+                        <SearchResult 
+                            result={result} 
+                            key={id} 
+                            setCourse={setCourse}
+                            setUserInput={setUserInput}
+                            setResults={setResults}
+                        />
+                    )
                 })
             }
+            
         </div>
         </>
     )

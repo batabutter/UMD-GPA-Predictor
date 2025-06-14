@@ -27,10 +27,15 @@ export function SearchBar ( {setResults, userInput, setUserInput} ) {
     return (
         <>
         <div className="input-wrapper">
+            
             <FaSearch id="search-icon"/>
-            <input placeholder="Type to search..." 
-            value = {userInput} 
-            onChange = {(e) => {handleInput(e.target.value)}}/>
+
+            <input 
+                placeholder="Type to search..." 
+                value = {userInput} 
+                onChange = {(e) => {handleInput(e.target.value)}}
+            />
+
         </div>
         </>
     )

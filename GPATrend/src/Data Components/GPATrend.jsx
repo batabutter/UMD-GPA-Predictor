@@ -19,10 +19,13 @@ export function GPATrend({ courseName }) {
     return (
         <>
             <div className="dataCard">
+
                 <div>GPA Trend All-Time</div>
+
                 {yearlyGradeData.length > 0 && yearlyGradeData[0].semester &&
                     (<Line
                         data={{
+
                             labels: yearlyGradeData.map(item => item.semester),
                             
                             datasets: [{
@@ -36,6 +39,7 @@ export function GPATrend({ courseName }) {
                         }}
 
                     />)}
+                    
             </div>
         </>
     )

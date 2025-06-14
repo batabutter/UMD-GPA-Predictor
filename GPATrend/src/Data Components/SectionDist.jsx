@@ -8,7 +8,6 @@ export function SectionDistribution({ courseName }) {
     const [currSectionDis, setCurrSectionDis] = useState([{}])
 
     useEffect(() => {
-      
         fetch(`/total_section_distribution/${courseName}`)
           .then(setSectionData([{}]))
           .then(res => res.json())
@@ -16,7 +15,7 @@ export function SectionDistribution({ courseName }) {
             setSectionData(data)
             console.log(data)
           });
-      }, [courseName]);
+    }, [courseName]);
 
     useEffect(() => {
       set_section_grade_dis(0, sectionData);
@@ -42,6 +41,7 @@ export function SectionDistribution({ courseName }) {
     return (
         <>
             <div className="dataCard">
+                
                 <div>Grade Distribution by Section</div>
 
                 <select onChange={(e) => set_section_grade_dis(e.target.selectedIndex, sectionData)}>

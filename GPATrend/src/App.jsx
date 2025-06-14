@@ -19,11 +19,17 @@ function App() {
   return (
     <>
       <Router>
+
         <Routes>
+
           <Route path='/' element={<GraphPage/>}/>
+          
           <Route path='/About' element={<About/>}/>
+
         </Routes>
+
       </Router>
+
     </>
   )
 }
