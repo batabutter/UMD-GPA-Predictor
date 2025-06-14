@@ -1,5 +1,4 @@
 import requests
-from flask import jsonify
 from course_operations import compute_semester_average, format_year 
 
 base_url = 'https://planetterp.com/api/v1'

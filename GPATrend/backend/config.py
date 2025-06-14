@@ -1,6 +1,5 @@
 from flask import Flask
 from api import Api_Calls
-from flask_cors import CORS
 
 
 app = Flask(__name__)
@@ -31,5 +30,5 @@ def total_section_dis(course_name):
     return Api_Calls.Course_Section_Information(course_name)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
     
