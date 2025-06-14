@@ -1,7 +1,6 @@
 import { Chart as ChartJS } from "chart.js/auto";
 import { Bar } from "react-chartjs-2"
-import '.././styles.css'
-import '.././App.css'
+import "./Data.css"
 import { useEffect, useState } from 'react'
 
 export function SectionDistribution({ courseName }) {

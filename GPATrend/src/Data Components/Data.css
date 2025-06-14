@@ -1,0 +1,19 @@
+.courseInfo {
+  font-size: larger;
+  background-color: #efefef;
+  border-radius: 0.5em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 25px 25px 25px 10px;
+}
+
+.courseInfo .subText {
+  font-size: small;
+}
+
+.dataCard {
+  background-color: #efefef;
+  border-radius: .5em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1em;
+  width: 750px;
+}

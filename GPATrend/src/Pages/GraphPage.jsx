@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import '.././styles.css'
 import '.././App.css'
+import './Oritentation.css'
+import '.././styles.css'
 import { SectionDistribution } from ".././Data Components/SectionDist"
 import { TotalDistribution } from '.././Data Components/TotalDistribution';
 import { GPATrend} from '.././Data Components/GPATrend';

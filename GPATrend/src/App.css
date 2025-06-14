@@ -1,5 +1,6 @@
 
 .App {
+  padding-top: 50px;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -10,73 +11,6 @@
   gap: 2vw;
   flex-wrap: wrap;
   background-color: #ddd;
-}
-
-.dataCard {
-  background-color: #efefef;
-  border-radius: .5em;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 1em;
-  width: 500px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  gap: 2vw;
-}
-
-.searchBarContainer {
-  border-radius: 0.5em;
-  padding: 25px 25px 0px 10px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-}
-
-.courseInfo {
-  font-size: larger;
-  background-color: #efefef;
-  border-radius: 0.5em;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 25px 25px 25px 10px;
-}
-
-.courseInfo .subText {
-  font-size: small;
-}
-
-.charts {
-  width: 100%;
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  gap: 2vw;
-  flex-wrap: wrap;
-  background-color: #ddd;
-}
-
-.chartsRow {
-  display: flex;
-  flex-direction: row;
-  gap: 2vw;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.sectionDist {
-  margin-top: 2em;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.totalDist {
-  margin-top: 2em;
-  width: 100%;
-  justify-content: center;
+  z-index: 1;
+  margin: 0;
 }

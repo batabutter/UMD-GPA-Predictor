@@ -4,15 +4,14 @@ import { About } from "./Pages/About"
 
 /*
 TODO:
-- Turn off prev graphs when entering a search
 - Fix null errors when trying to render parts of a json that don't exist
-- Change colors of graphs to make them more visually appealing
 - Fix A and A+ reversed when dispying section distribution
 - Fix rendering bugs when navigating through webpages
-- Fix confusing locations of stuff in the css files
-- Remove nused routes
+- Remove unused routes
 - Maintain consistent style
 - fix proxy errors
+- Make working on mobile
+- Get favicon working
 */
 
 function App() {

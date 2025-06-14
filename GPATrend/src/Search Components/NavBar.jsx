@@ -7,7 +7,7 @@ export function NavBar() {
         <>
             <div className='navigation'>
                 <Link to='/'>
-                    <button className='redir-button'>Course Search</button>
+                    <button className='redir-button'>Home</button>
                 </Link>
                 
                 <Link to='/About'>
