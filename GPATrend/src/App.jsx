@@ -12,6 +12,7 @@ TODO:
 - Fix confusing locations of stuff in the css files
 - Remove nused routes
 - Maintain consistent style
+- fix proxy errors
 */
 
 function App() {
