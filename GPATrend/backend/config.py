@@ -9,10 +9,6 @@ app = Flask(__name__)
 def coursedata(course_name):
     return Api_Calls.Get_Course_Info(course_name)
 
-@app.route("/course_grade_dis/<course_name>")
-def coursedis(course_name):
-    return Api_Calls.Get_Course_Grade_Distribution(course_name)
-
 @app.route("/course_search/<course_name>")
 def coursesearch(course_name):
     return Api_Calls.Search_List_Result(course_name)
