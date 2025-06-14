@@ -23,9 +23,13 @@ export function GPATrend({ courseName }) {
                     (<Line
                         data={{
                             labels: yearlyGradeData.map(item => item.semester),
+                            
                             datasets: [{
                                 label: "Semester Average",
-                                data: yearlyGradeData.map(item => item.average)
+                                data: yearlyGradeData.map(item => item.average),
+                                backgroundColor: "rgba(255, 0, 0, 0.7)",
+                                borderColor: "red",
+                                pointBackgroundColor: "rgba(255, 0, 0, 0.7)",
                             }]
 
                         }}

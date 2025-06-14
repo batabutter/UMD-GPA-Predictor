@@ -60,7 +60,9 @@ export function SectionDistribution({ courseName }) {
                         datasets: [
                             {
                                 label: "Number of Students",
-                                data: currSectionDis.map(item => item.count)
+                                data: currSectionDis.map(item => item.count),
+                                backgroundColor: "rgba(255, 0, 0, 0.7)",
+                                borderColor: "red",
                             },
                         ],
                     }}>

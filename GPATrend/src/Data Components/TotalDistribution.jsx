@@ -28,6 +28,7 @@ export function TotalDistribution({ courseName }) {
                             {
                                 label: 'Number of Students',
                                 data: totalGradeData.map(item => item.count),
+                                backgroundColor: "rgba(255, 0, 0, 0.7)"
                             },
                         ],
                     }}
