@@ -6,27 +6,12 @@ export function TotalDistribution({ courseName }) {
     const [totalGradeData, setTotalGradeData] = useState([{}])
 
     useEffect(() => {
-        fetch(`/course_grade_dis/${courseName}`)
+        fetch(`/total_course_grade_dis/${courseName}`)
+            .then(setTotalGradeData([{}]))
             .then(res => res.json())
             .then(data => {
-                const cumulativeGrades = {};
-
-                data.forEach(item => {
-                    Object.keys(item).forEach(key => {
-                        if (!["Other", "course", "professor", "section", "semester"].includes(key)) {
-                            if (!cumulativeGrades[key])
-                                cumulativeGrades[key] = 0;
-                            cumulativeGrades[key] += item[key]
-                        }
-                    })
-                });
-
-                const gradeArr = Object.entries(cumulativeGrades).map(([grade, count]) => ({
-                    grade,
-                    count
-                }));
-
-                setTotalGradeData(gradeArr);
+                console.log(data)
+                setTotalGradeData(data);
             });
     }, [courseName]);
 
@@ -35,7 +20,8 @@ export function TotalDistribution({ courseName }) {
         <>
             <div className="dataCard">
                 <div>Grade Distribution All-Time</div>
-                <Bar
+                {totalGradeData.length > 0 && totalGradeData[0].count > 0 && (
+                    <Bar
                     data={{
                         labels: totalGradeData.map(item => item.grade),
                         datasets: [
@@ -45,7 +31,7 @@ export function TotalDistribution({ courseName }) {
                             },
                         ],
                     }}
-                />
+                />)}
             </div>
         </>
     )

@@ -3,32 +3,34 @@ import { useEffect, useState } from 'react'
 
 export function GPATrend({ courseName }) {
 
-    const [yearlyGradeData, setYearlyGradeData] = useState([{}])
+    const [yearlyGradeData, setYearlyGradeData] = useState([])
 
     useEffect(() => {
         fetch(`/course_gpa_trend/${courseName}`)
-          .then(res => res.json())
-          .then(data => {
-            setYearlyGradeData(data)
-            console.log(data)
-          });
-      }, [courseName]);
+            .then(setYearlyGradeData([]))
+            .then(res => res.json())
+            .then(data => {
+                setYearlyGradeData(data)
+                console.log(data)
+            });
+    }, [courseName]);
 
     return (
         <>
             <div className="dataCard">
                 <div>GPA Trend All-Time</div>
-                <Line
-                    data={{
-                        labels: yearlyGradeData.map( item => item.semester),
-                        datasets: [{
-                            label: "Semester Average",
-                            data: yearlyGradeData.map( item => item.average)
-                        }]
+                {yearlyGradeData.length > 0 && yearlyGradeData[0].semester &&
+                    (<Line
+                        data={{
+                            labels: yearlyGradeData.map(item => item.semester),
+                            datasets: [{
+                                label: "Semester Average",
+                                data: yearlyGradeData.map(item => item.average)
+                            }]
 
-                    }}
+                        }}
 
-                />
+                    />)}
             </div>
         </>
     )

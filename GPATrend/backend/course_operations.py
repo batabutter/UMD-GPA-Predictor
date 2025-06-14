@@ -53,4 +53,14 @@ def compute_semester_average(semester) :
         avg = cum_total / num_students
 
         return avg
-    
+
+def format_year(full_year):
+        year = full_year[0:4]
+        formatted_year = ""
+        
+        if (year == "1"):
+                formatted_year = "Fall " + year
+        else:
+                formatted_year = "Spring " + year
+                
+        return formatted_year

@@ -1,6 +1,6 @@
 import requests
 from flask import jsonify
-from grade_calculation import compute_semester_average 
+from course_operations import compute_semester_average, format_year 
 
 base_url = 'https://planetterp.com/api/v1'
 
@@ -34,6 +34,60 @@ class Api_Calls:
         return data
     
     @staticmethod
+    def Course_Section_Information(course_name):
+        course_dis = Api_Calls.Get_Course_Grade_Distribution(course_name)
+        grade_dis = []
+        
+        for key in course_dis:
+            info = {
+                "A": 0, "A+": 0, "A-": 0,
+                "B": 0, "B+": 0, "B-": 0,
+                "C": 0, "C+": 0, "C-": 0,
+                "D": 0, "D+": 0, "D-": 0,
+                "F": 0, "Other": 0, "W": 0,
+                "course": "", "professor": "",
+                "section": "", "semester": "",
+                "formatted_name": ""
+            }
+            formatted_year = format_year(key["semester"])
+            
+            formatted_info = (
+            formatted_year + ", " 
+            + key["section"] + " - " + str(key["professor"])
+            )
+            
+            for value in key:
+                info[value] = key[value]
+                info["formatted_name"] = formatted_info
+            
+            grade_dis.append(info)
+        
+        return grade_dis
+            
+    
+    @staticmethod
+    def Get_Total_Course_Grade_Distribution(course_name):
+        course_dis = Api_Calls.Get_Course_Grade_Distribution(course_name)
+        
+        cumulative_grades = {}
+        
+        excluded_keys = ["Other", "course", "professor", "section", "semester"]
+
+        for key in course_dis:
+            
+            for value in key:
+                if value not in excluded_keys:
+                    if value not in cumulative_grades:
+                        cumulative_grades[value] = 0
+                    cumulative_grades[value] += key[value]
+                    
+        grade_arr = []
+        for grade, count in cumulative_grades.items():
+            grade_arr.append({"grade": grade, "count": count})
+        
+        return grade_arr
+    
+    @staticmethod
     def Search_List_Result(name):
 
         url = f'{base_url}/search'
@@ -57,14 +111,8 @@ class Api_Calls:
         final_averages = []
         
         for key in course_dis:
-            formatted_year = key["semester"][0:4]
-            
-            
-            if (key["semester"][len(key["semester"]) - 1] == "1"):
-                formatted_year = "Fall " + formatted_year
-            else:
-                formatted_year = "Spring " + formatted_year
-                
+            formatted_year = format_year(key["semester"])
+
             if formatted_year not in semester_grade_dis:
                 semester_grade_dis[formatted_year] = {}
                 
@@ -83,8 +131,9 @@ class Api_Calls:
                 {"semester": semester, "average": average}
                 for semester, average in semester_avgs.items()
             ]
+            final_averages = []
+            for semester, average in semester_avgs.items():
+                final_averages.append({"semester": semester, "average": average})
+            
             
         return final_averages
-        
-        
-    

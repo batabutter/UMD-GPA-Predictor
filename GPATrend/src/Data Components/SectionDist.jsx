@@ -9,45 +9,13 @@ export function SectionDistribution({ courseName }) {
     const [currSectionDis, setCurrSectionDis] = useState([{}])
 
     useEffect(() => {
-        fetch(`/course_grade_dis/${courseName}`)
+      
+        fetch(`/total_section_distribution/${courseName}`)
+          .then(setSectionData([{}]))
           .then(res => res.json())
           .then(data => {
-    
-            let formatted_year = ""
-            let formatted_info = ""
-    
-            const grade_dis = data.map(item => {
-    
-              const info = {
-                "A": 0, "A+": 0, "A-": 0,
-                "B": 0, "B+": 0, "B-": 0,
-                "C": 0, "C+": 0, "C-": 0,
-                "D": 0, "D+": 0, "D-": 0,
-                "F": 0, "Other": 0, "W": 0,
-                "course": "", "professor": "",
-                "section": "", "semester": "",
-                "formatted_name": ""
-              };
-    
-              formatted_year = item.semester.slice(0, 4)
-              if (item.semester[item.semester.length - 1] == "1")
-                formatted_year = "Fall " + formatted_year
-              else
-                formatted_year = "Spring " + formatted_year
-    
-              formatted_info = formatted_year + ", " + item.section
-                + " - " + item.professor
-    
-              Object.keys(item).forEach(key => {
-                info[key] = item[key]
-                info["formatted_name"] = formatted_info
-              })
-    
-              return info
-            })
-    
-            setSectionData(grade_dis)
-            console.log(grade_dis)
+            setSectionData(data)
+            console.log(data)
           });
       }, [courseName]);
 
@@ -85,7 +53,8 @@ export function SectionDistribution({ courseName }) {
                     ))}
                 </select>
 
-                <Bar
+                { currSectionDis.length > 0 && (
+                  <Bar
                     data={{
                         labels: currSectionDis.map(item => item.grade),
                         datasets: [
@@ -96,6 +65,7 @@ export function SectionDistribution({ courseName }) {
                         ],
                     }}>
                 </Bar>
+                )}
 
             </div>
         </>

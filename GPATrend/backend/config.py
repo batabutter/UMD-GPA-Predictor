@@ -22,6 +22,14 @@ def coursesearch(course_name):
 def course_averages(course_name):
     return Api_Calls.Course_GPA_Trend(course_name)
 
+@app.route("/total_course_grade_dis/<course_name>")
+def total_course_dis(course_name):
+    return Api_Calls.Get_Total_Course_Grade_Distribution(course_name)
+
+@app.route("/total_section_distribution/<course_name>")
+def total_section_dis(course_name):
+    return Api_Calls.Course_Section_Information(course_name)
+
 if __name__ == "__main__":
     app.run(debug=True)
     

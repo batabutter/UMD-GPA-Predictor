@@ -9,7 +9,9 @@ export default defineConfig({
       '/course_info': 'http://localhost:5000',
       '/course_grade_dis': 'http://localhost:5000',
       '/course_search': 'http://localhost:5000',
-      '/course_gpa_trend/': 'http://localhost:5000'
+      '/course_gpa_trend/': 'http://localhost:5000',
+      '/total_course_grade_dis': 'http://localhost:5000',
+      '/total_section_distribution/': 'http://localhost:5000'
     }
   }
 })
