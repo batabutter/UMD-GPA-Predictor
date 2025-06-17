@@ -4,10 +4,8 @@ import { About } from "./Pages/About"
 
 /*
 TODO:
-- Fix null errors when trying to render parts of a json that don't exist
-- Fix A and A+ reversed when displaying section distribution
-- fix proxy errors
-- Make working on mobile
+- fix proxy routing when running on AWS
+- Add dancing guy
 */
 
 function App() {

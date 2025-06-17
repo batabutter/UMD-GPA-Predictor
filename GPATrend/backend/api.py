@@ -50,8 +50,9 @@ class Api_Calls:
                 info[value] = key[value]
                 info["formatted_name"] = formatted_info
             
+            
             grade_dis.append(info)
-        
+
         return grade_dis
             
     

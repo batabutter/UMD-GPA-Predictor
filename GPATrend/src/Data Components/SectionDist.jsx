@@ -7,33 +7,50 @@ export function SectionDistribution({ courseName }) {
     const [sectionData, setSectionData] = useState([{}])
     const [currSectionDis, setCurrSectionDis] = useState([{}])
 
+
     useEffect(() => {
         fetch(`/total_section_distribution/${courseName}`)
-          .then(setSectionData([{}]))
-          .then(res => res.json())
-          .then(data => {
-            setSectionData(data)
-            console.log(data)
-          });
+            .then(setSectionData([{}]))
+            .then(res => res.json())
+            .then(data => {
+                setSectionData(data)
+            });
     }, [courseName]);
 
     useEffect(() => {
-      set_section_grade_dis(0, sectionData);
+        set_section_grade_dis(0, sectionData);
     }, [sectionData]);
 
     function set_section_grade_dis(index, data) {
 
-        const raw = data[index];
+        const raw = data[index]
 
-        const gradeKeys = Object.keys(raw).filter(
-            key => !["course", "professor", "section", "semester", 
-                "formatted_name"].includes(key)
-        );
+        // I am looking into a better method to fix this, 
+        // but this works really well for now.
 
-        const gradeArray = gradeKeys.map(grade => ({
+        const gradeOrder = [
+            "A+",
+            "A",
+            "A-",
+            "B+",
+            "B",
+            "B-",
+            "C+",
+            "C",
+            "C-",
+            "D+",
+            "D",
+            "D-",
+            "F",
+        ]
+
+
+        const gradeArray = gradeOrder.map(grade => ({
             grade,
             count: raw[grade],
         }));
+
+        console.log(gradeOrder)
 
         setCurrSectionDis(gradeArray);
     }
@@ -41,7 +58,7 @@ export function SectionDistribution({ courseName }) {
     return (
         <>
             <div className="dataCard">
-                
+
                 <div>Grade Distribution by Section</div>
 
                 <select onChange={(e) => set_section_grade_dis(e.target.selectedIndex, sectionData)}>
@@ -52,20 +69,20 @@ export function SectionDistribution({ courseName }) {
                     ))}
                 </select>
 
-                { currSectionDis.length > 0 && (
-                  <Bar
-                    data={{
-                        labels: currSectionDis.map(item => item.grade),
-                        datasets: [
-                            {
-                                label: "Number of Students",
-                                data: currSectionDis.map(item => item.count),
-                                backgroundColor: "rgba(255, 0, 0, 0.7)",
-                                borderColor: "red",
-                            },
-                        ],
-                    }}>
-                </Bar>
+                {currSectionDis.length > 0 && (
+                    <Bar
+                        data={{
+                            labels: currSectionDis.map(item => item.grade),
+                            datasets: [
+                                {
+                                    label: "Number of Students",
+                                    data: currSectionDis.map(item => item.count),
+                                    backgroundColor: "rgba(255, 0, 0, 0.7)",
+                                    borderColor: "red",
+                                },
+                            ],
+                        }}>
+                    </Bar>
                 )}
 
             </div>
