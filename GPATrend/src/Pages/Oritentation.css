@@ -37,6 +37,12 @@
 
 @media screen and (max-width: 1200px) {
 
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 0
+  }
+
   .chartsRow {
     display: flex;
     flex-direction: column;
@@ -47,4 +53,15 @@
     margin: auto;
     width: auto;
   }
+
+  .searchBarContainer {
+    border-radius: 0.5em;
+    margin: 0 auto;
+    height: auto;
+    padding:5% 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }s
 }
