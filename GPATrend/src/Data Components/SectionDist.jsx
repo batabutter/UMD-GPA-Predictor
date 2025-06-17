@@ -50,8 +50,6 @@ export function SectionDistribution({ courseName }) {
             count: raw[grade],
         }));
 
-        console.log(gradeOrder)
-
         setCurrSectionDis(gradeArray);
     }
 
@@ -69,21 +67,23 @@ export function SectionDistribution({ courseName }) {
                     ))}
                 </select>
 
-                {currSectionDis.length > 0 && (
-                    <Bar
-                        data={{
-                            labels: currSectionDis.map(item => item.grade),
-                            datasets: [
-                                {
-                                    label: "Number of Students",
-                                    data: currSectionDis.map(item => item.count),
-                                    backgroundColor: "rgba(255, 0, 0, 0.7)",
-                                    borderColor: "red",
-                                },
-                            ],
-                        }}>
-                    </Bar>
-                )}
+                {currSectionDis.length > 0 &&
+                    currSectionDis.some(item => item && item.grade && item.count > 0) &&
+                    (
+                        <Bar
+                            data={{
+                                labels: currSectionDis.map(item => item.grade),
+                                datasets: [
+                                    {
+                                        label: "Number of Students",
+                                        data: currSectionDis.map(item => item.count),
+                                        backgroundColor: "rgba(255, 0, 0, 0.7)",
+                                        borderColor: "red",
+                                    },
+                                ],
+                            }}>
+                        </Bar>
+                    )}
 
             </div>
         </>

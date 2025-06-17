@@ -4,6 +4,7 @@ import { About } from "./Pages/About"
 
 /*
 TODO:
+- Fix slow searches
 - fix proxy routing when running on AWS
 - Add dancing guy
 */
