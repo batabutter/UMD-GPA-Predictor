@@ -1,5 +1,5 @@
 * {
-   font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .About {
@@ -17,7 +17,7 @@
     background-color: #efefef;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: .5em;
-    width: 700px;
+    width: auto;
     font-size: 50px;
     padding: 20px 20px 20px 20px;
 }
@@ -25,4 +25,21 @@
 .info .subText {
     font-size: 20px;
     padding: 5px 5px 5px 5px;
+    width: 700px;
+}
+
+@media screen and (max-width: 1200px) {
+  .info {
+    width: 75%;
+    font-size: medium;
+    padding: 20px;
+    margin: 0 auto;
+    height: auto; /* Let it expand to fit content */
+  }
+
+  .info .subText {
+    font-size: small;
+    width: 100%;
+    padding: 5px 0;
+  }
 }

@@ -38,16 +38,7 @@ class Api_Calls:
         grade_dis = []
         
         for key in course_dis:
-            info = {
-                "A": 0, "A+": 0, "A-": 0,
-                "B": 0, "B+": 0, "B-": 0,
-                "C": 0, "C+": 0, "C-": 0,
-                "D": 0, "D+": 0, "D-": 0,
-                "F": 0, "Other": 0, "W": 0,
-                "course": "", "professor": "",
-                "section": "", "semester": "",
-                "formatted_name": ""
-            }
+            info = {}
             formatted_year = format_year(key["semester"])
             
             formatted_info = (

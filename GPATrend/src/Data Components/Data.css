@@ -17,3 +17,28 @@
   padding: 1em;
   width: 750px;
 }
+
+@media screen and (max-width: 1200px) {
+
+  .dataCard {
+    background-color: #efefef;
+    border-radius: .5em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 1em;
+    width: 350px;
+  }
+
+  .courseInfo {
+    font-size: medium;
+    background-color: #efefef;
+    border-radius: 0.5em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 15px 15px 15px 5px;
+    margin-left: 10px;
+  }
+
+  .courseInfo .subText {
+  font-size: smaller;
+  }
+
+}

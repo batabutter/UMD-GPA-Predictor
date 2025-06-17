@@ -1,7 +1,6 @@
 from flask import Flask
 from api import Api_Calls
 
-
 app = Flask(__name__)
 #Json data
 

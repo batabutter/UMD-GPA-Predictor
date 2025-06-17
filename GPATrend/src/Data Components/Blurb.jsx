@@ -20,7 +20,8 @@ export function Blurb({ courseName }) {
                 {courseName}
 
                 <div className="subText">
-                    Average GPA: {Math.round(data.average_gpa * 100) / 100}
+                    Average GPA: <b>{Math.round(data.average_gpa * 100) / 100}
+                    </b>
                 </div>
 
                 <div className="subText">
