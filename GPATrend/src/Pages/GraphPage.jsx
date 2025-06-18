@@ -17,8 +17,6 @@ export function GraphPage() {
     const [currCourse, setCurrCourse] = useState("CMSC216")
     const [input, setInput] = useState("")
 
-    PageTrack()
-
     return (
         <>
             <PageTrack />
