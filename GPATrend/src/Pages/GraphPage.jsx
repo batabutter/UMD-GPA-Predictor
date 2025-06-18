@@ -21,6 +21,7 @@ export function GraphPage() {
 
     return (
         <>
+            <PageTrack />
             <NavBar/>
             <div className="App">
                 <div className="header">

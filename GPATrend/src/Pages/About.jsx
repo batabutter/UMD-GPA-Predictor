@@ -1,12 +1,12 @@
 import { NavBar } from '../Search Components/NavBar';
+import { PageTrack } from '../PageTrack'
 import ".././About.css"
 
 export function About() {
 
-    PageTrack()
-
     return (
         <>
+            <PageTrack />
             <NavBar />
             <div className='About'>
                 <div className="info">
