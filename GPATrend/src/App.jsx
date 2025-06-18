@@ -5,6 +5,7 @@ import { About } from "./Pages/About"
 /*
 TODO:
 - Fix slow searches
+- Fix bugs where it still displays results that have professors name and such
 - fix proxy routing when running on AWS
 - Add dancing guy
 */

@@ -31,8 +31,7 @@ export function About() {
                     <div className='subText'>
                         If you have any suggestions,
                         bug fixes, or anything you may want see improved, please
-                        feel free to email me at
-                        <a href="mailto:umdgradetrends@gmail.com">umdgradetrends@gmail.com</a>
+                        feel free to email me at <a href="mailto:umdgradetrends@gmail.com">umdgradetrends@gmail.com</a>
                     </div>
 
                 </div>
