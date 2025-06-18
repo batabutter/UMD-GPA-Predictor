@@ -1,9 +1,13 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from .api import Api_Calls
 from flask import jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../dist", static_url_path="/")
 #Json data
+
+@app.route("/")
+def home():
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/course_info/<course_name>")
 def coursedata(course_name):
