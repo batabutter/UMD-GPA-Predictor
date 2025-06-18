@@ -6,7 +6,8 @@ import { About } from "./Pages/About"
 TODO:
 - Fix slow searches
 - Fix bugs where it still displays results that have professors name and such
-- fix proxy routing when running on AWS
+- Fix proxy routing when running on AWS
+- Add ReactGA component to pagest to track user activity
 - Add dancing guy
 */
 

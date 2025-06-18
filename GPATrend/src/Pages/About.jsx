@@ -2,6 +2,9 @@ import { NavBar } from '../Search Components/NavBar';
 import ".././About.css"
 
 export function About() {
+
+    PageTrack()
+
     return (
         <>
             <NavBar />

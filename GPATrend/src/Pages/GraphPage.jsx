@@ -9,12 +9,15 @@ import { SearchBar } from '.././Search Components/Searchbar';
 import { SearchResultsList } from '.././Search Components/SearchResultsList';
 import { Blurb } from '.././Data Components/Blurb';
 import { NavBar } from '../Search Components/NavBar';
+import { PageTrack } from '../PageTrack'
 
 export function GraphPage() {
     const [searchResults, setSearchResults] = useState([])
     // Default course
     const [currCourse, setCurrCourse] = useState("CMSC216")
     const [input, setInput] = useState("")
+
+    PageTrack()
 
     return (
         <>
