@@ -4,4 +4,4 @@
 
 Any suggestions can be sent here > umdgradetrends@gmail.com
 
-If you are planning on using this code, please make sure to credit PlanetTerp as I largery used their APi to gain Grade Information
+If you are planning on using this code, please make sure to credit PlanetTerp as I largery used their API to gain Grade Information
