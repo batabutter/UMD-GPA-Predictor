@@ -1,5 +1,5 @@
 from flask import Flask
-from api import Api_Calls
+from .api import Api_Calls
 from flask import jsonify
 
 app = Flask(__name__)
